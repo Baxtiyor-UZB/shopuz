@@ -1,0 +1,16 @@
+{% extends 'store/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1 class="display-5">Create a new account!</h1>
+<br>
+<form method="POST">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<br>
+	<input type="submit" name="submit" class="btn btn-primary mb-2" value="RO'YXATDAN O'TISH">
+	<input type="reset" name="reset" class="btn btn-secondary mb-2" value="QAYTA QO'YISH">
+	<br>
+	<a href="{% url 'login' %}">SIZDA ACCOUNT MAVJUD BO'LSA </a>
+</form>
+
+{% endblock %}

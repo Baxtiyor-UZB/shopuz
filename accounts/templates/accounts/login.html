@@ -1,0 +1,23 @@
+{% extends 'store/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<h1 class="display-5">Log In!</h1>
+	<hr class="my-4">
+	<form method="POST">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<br>
+		<input type="submit" class="btn btn-primary mb-2" name="submit" , value='Login'>
+	</form>
+	<br>
+	
+	<a class="align-middle" href="{% url 'register' %}">YANGI FOYDALANUVCHI OCHISH</a>
+	<br><br>
+	<div>
+		<h3>GOOGLE ORQALI KIRISH:</h3>
+		<a href="{% url 'social:begin' 'google-oauth2' %}">
+			<button type="button" name="button" class="btn btn-danger">Google</button>
+		</a>
+	</div>
+
+{% endblock %}
